@@ -1,0 +1,36 @@
+image: linagora/node-test-base:8
+
+stages:
+  - test
+  - deploy_dev
+
+test:
+  stage: test
+  tags:
+    - docker
+  script:
+   - npm i
+   - npm update
+   - bower i --allow-root
+   - grunt
+
+#deploy_dev:
+#   stage: deploy_dev
+#   tags:
+#     - dev.open-paas.org
+#     - deployment
+#   environment:
+#     name: dev
+#     url: https://dev.open-paas.org
+#   only:
+#     - master@linagora/lgs/openpaas/linagora.esn.calendar.map
+#   script:
+#     - cd /srv/${CI_PROJECT_NAME}
+#     - git fetch --all
+#     - git checkout ${CI_COMMIT_SHA}
+#     - npm install --ignore-scripts --production
+#     - npm prune
+#     - bower install --production
+#     - bower prune
+#     - git checkout -- .
+#     - sudo /etc/init.d/rse.dev restart
