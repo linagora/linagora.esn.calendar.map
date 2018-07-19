@@ -11,6 +11,7 @@
       return Restangular.withConfig(function(RestangularConfigurer) {
         RestangularConfigurer.setBaseUrl(MODULE_DIR_NAME + '/api');
         RestangularConfigurer.setFullResponse(true);
+        RestangularConfigurer.setDefaultHeaders({'Content-Type': 'application/json; charset=UTF-8'});
       });
     }
 })();

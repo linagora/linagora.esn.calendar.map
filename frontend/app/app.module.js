@@ -4,6 +4,7 @@
   var MODULE_NAME = 'linagora.esn.calendar.map';
 
   angular.module(MODULE_NAME, [
-    'restangular'
+    'restangular',
+    'leaflet-directive'
   ]);
 })();

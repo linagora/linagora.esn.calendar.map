@@ -51,6 +51,7 @@ const awesomeModule = new AwesomeModule(AWESOME_MODULE_NAME, {
         return filepath.replace(FRONTEND_JS_PATH, '');
       });
 
+      webserverWrapper.injectLess('calendar', [FRONTEND_JS_PATH + '/styles.less'], 'esn');
       webserverWrapper.injectAngularAppModules(AWESOME_MODULE_NAME, frontendJsFilesUri, AWESOME_MODULE_NAME, ['esn'], {
         localJsFiles: frontendJsFilesFullPath
       });

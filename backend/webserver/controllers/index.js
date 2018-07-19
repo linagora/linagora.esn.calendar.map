@@ -1,5 +1,9 @@
 'use strict';
 
-module.exports = function(dependencies, lib) {
+module.exports = (dependencies, lib) => {
+    const routes = require('./routes')(dependencies, lib);
 
+    return {
+        routes
+    };
 };

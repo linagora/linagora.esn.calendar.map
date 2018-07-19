@@ -3,7 +3,7 @@
 const express = require('express');
 
 // This is you own express application
-module.exports = function(dependencies, lib) {
+module.exports = dependencies => {
   const application = express();
 
   // Every express new configuration are appended here.
