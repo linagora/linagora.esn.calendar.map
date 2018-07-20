@@ -85,7 +85,7 @@
     }
 
     function updateCenter() {
-      self.center = self.originalCenter;
+      self.center = angular.copy(self.originalCenter);
     }
   }
 })();

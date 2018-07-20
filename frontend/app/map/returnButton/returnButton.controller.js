@@ -5,12 +5,7 @@
     .controller('calReturnButtonController', calReturnButtonController);
 
   function calReturnButtonController(
-    $scope,
-    $window,
-    calendarGeoApi,
-    calendarMapRestangular,
-    DEFAULT_DURATION,
-    DEFAULT_DISTANCE
+    $window
   ) {
     var self = this;
     var L = $window.L;
@@ -38,7 +33,7 @@
     }
 
     function returnToPos() {
-        self.updateCenter();
+        self.backToMarker();
     }
   }
 })();
