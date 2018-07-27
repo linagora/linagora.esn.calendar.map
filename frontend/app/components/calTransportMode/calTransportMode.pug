@@ -1,0 +1,11 @@
+#transportModeBox
+  form#transportModeForm(action="")
+    label.containerTransport Car
+      input(type="radio" ng-model="ctrl.transportmode" name="transport" value="car" ng-change='ctrl.onChangeMode()(ctrl.transportmode)')
+      span.checkmark
+    label.containerTransport Bike
+      input(type="radio" ng-model="ctrl.transportmode" name="transport" value="bike" ng-change='ctrl.onChangeMode()(ctrl.transportmode)')
+      span.checkmark
+    label.containerTransport Walk
+      input(type="radio" ng-model="ctrl.transportmode" name="transport" value="walk" ng-change='ctrl.onChangeMode()(ctrl.transportmode)')
+      span.checkmark

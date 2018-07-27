@@ -10,8 +10,8 @@ module.exports = () => {
     getAddressFromCoord
   };
 
-  function getRoutes({ transportMode, start, destination }, callback) {
-    const getRoutesUrl = new URL(`http://localhost:8090/nearest/${transportMode}/${start}/${destination}`);
+  function getRoutes({ transportMode, start_lat, start_long, destination_lat, destination_long}, callback) {
+    const getRoutesUrl = new URL(`http://localhost:8090/nearest/coordinates/${transportMode}/${start_lat}/${start_long}/${destination_lat}/${destination_long}`);
 
     return axios.get(getRoutesUrl.href)
     .then(response => callback(null, response.data))
@@ -19,7 +19,7 @@ module.exports = () => {
   }
 
   function getCoordFromAddress({ address }, callback) {
-    const getCoordUrl = new URL(`http://nominatim.openstreetmap.org/search/${address}?format=json&addressdetails`);
+    const getCoordUrl = new URL(`http://nominatim.openstreetmap.org/search/${address}?format=json&namedetails=0&addressdetails=0&limit=1`);
 
     return axios.get(getCoordUrl.href)
     .then(response => callback(null, response.data[0]))

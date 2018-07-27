@@ -1,0 +1,4 @@
+leaflet(ng-show='ctrl.supported && ctrl.addressIsValid', center='ctrl.center', tiles='ctrl.tiles', markers='ctrl.markers', controls='ctrl.controls', height="200px", width="100%")
+  cal-info-box(controls='ctrl.controls', event-coord='ctrl.eventCoord', update-routes='ctrl.updateRoutes')
+  cal-return-btn(controls='ctrl.controls', back-to-marker='ctrl.updateCenter()')
+  cal-button-to-route(controls='ctrl.controls', event-routes='ctrl.eventRoutes')

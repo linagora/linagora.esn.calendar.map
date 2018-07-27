@@ -59,6 +59,7 @@
     "lodash": "4.15.0",
     "moment": "2.14.1",
     "mongoose": "4.7.1",
+    "node-geocoder": "^3.22.0",
     "serve-favicon": "~2.1.3"
   }
 }

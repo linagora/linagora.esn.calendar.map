@@ -11,12 +11,12 @@ module.exports = (dependencies, lib) => {
         return res.status(400).json({error: {code: 400, message: 'Bad Request', details: 'Transport mode is missing'}});
       }
 
-      if (!req.params.start) {
-        return res.status(400).json({error: {code: 400, message: 'Bad Request', details: 'Start address is missing'}});
+      if (!req.params.start_lat || !req.params.start_long) {
+        return res.status(400).json({error: {code: 400, message: 'Bad Request', details: 'Start coordinates is missing'}});
       }
 
-      if (!req.params.destination) {
-        return res.status(400).json({error: {code: 400, message: 'Bad Request', details: 'Destination address is missing'}});
+      if (!req.params.destination_lat || !req.params.destination_long) {
+        return res.status(400).json({error: {code: 400, message: 'Bad Request', details: 'Destination coordinates is missing'}});
       }
 
       lib.routes.getRoutes(req.params, (err, result) => {

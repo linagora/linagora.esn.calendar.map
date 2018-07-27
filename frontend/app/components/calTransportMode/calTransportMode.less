@@ -1,0 +1,66 @@
+#transportModeBox {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    height: 28px;
+    padding: 6px;
+  }
+
+#transportModeForm{
+  display: flex;
+  flex-direction: row;
+}
+
+  .containerTransport {
+    display: block;
+    position: relative;
+    padding-left: 21px;
+    padding-right: 7px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+}
+
+.containerTransport input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #dcd3d3;
+    border-radius: 50%;
+}
+
+.containerTransport:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.containerTransport input:checked ~ .checkmark {
+    background-color: #426886;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerTransport input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.containerTransport .checkmark:after {
+ 	top: 5px;
+	left: 5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: white;
+}

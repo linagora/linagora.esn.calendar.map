@@ -14,7 +14,7 @@
     self.returnToPos = returnToPos;
 
     function $onInit() {
-        self.markersCenter = self.centers;
+      self.markersCenter = self.centers;
       _injectButton();
     }
 

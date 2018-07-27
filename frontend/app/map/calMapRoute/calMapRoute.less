@@ -1,0 +1,15 @@
+cal-map-route {
+    margin:0;
+    padding:0;
+    width:100vw;
+    height: ~"calc(100vh - @{header-height} - 3px)";
+    overflow: hidden;
+  
+    @media (min-width: @screen-md-min) {
+      height: ~"calc(100vh - @{header-height-md} - 3px)";
+    }
+  
+    @media (min-width: @screen-xl-min) {
+      height: ~"calc(100vh - @{header-height-xl} - 3px)";
+    }
+  }

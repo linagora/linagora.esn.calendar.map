@@ -5,11 +5,12 @@ var MODULE_NAME = 'linagora.esn.calendar.map';
 angular.module(MODULE_NAME)
   .component('calInfoBox', {
     restrict: 'E',
-    templateUrl: '/linagora.esn.calendar.map/app/map/infoBox/infoBox.html',
+    templateUrl: '/linagora.esn.calendar.map/app/components/calInfoBox/calInfoBox.html',
     controller: 'calinfoBoxController',
     controllerAs: 'ctrl',
     bindings: {
-      destinationAddress: '<',
+      eventCoord: '<',
+      updateRoutes: '&',
       controls: '<'
     }
   });

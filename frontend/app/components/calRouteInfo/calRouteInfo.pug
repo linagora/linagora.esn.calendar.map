@@ -1,0 +1,13 @@
+#btn
+  button#showHideBox(type='button', ng-click="ctrl.ShowHide()")
+    .mdi.mdi-menu-right(ng-if='ctrl.IsVisible')
+    .mdi.mdi-menu-left(ng-if='!ctrl.IsVisible')
+#routeInfoBox(ng-show = "ctrl.IsVisible")
+  #routeInfoBoxHeader
+    h4 Instructions
+    p {{ctrl.duration}} , {{ctrl.distance}}
+  #routeInfoBoxBody
+    table
+      tr(ng-repeat="info in ctrl.instructionsList")
+        td(width="20%") {{info.distance}}
+        td(width="80%") {{info.instruction}}

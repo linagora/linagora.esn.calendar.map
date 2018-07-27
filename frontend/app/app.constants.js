@@ -17,7 +17,8 @@
     .constant('DEFAULT_CENTER', {
       lat: 47.909009,
       lng: 2.334976,
-      zoom: 5
+      zoom: 5,
+      autoDiscover: false
     })
     .constant('DEFAULT_DURATION', '_ h _ min')
     .constant('DEFAULT_DISTANCE', '_ Km');
