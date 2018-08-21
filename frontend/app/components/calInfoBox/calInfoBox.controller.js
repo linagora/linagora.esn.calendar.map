@@ -9,45 +9,24 @@
     $window,
     calendarGeoApi,
     calendarMapRestangular,
-    mapUtils,
-    DEFAULT_DURATION,
-    DEFAULT_DISTANCE,
-    DEFAULT_TRANSPORT_TYPE
+    mapUtils
   ) {
     var self = this;
     var L = $window.L;
 
     self.$onInit = $onInit;
 
-    $scope.$watch('ctrl.eventCoord', function(newVal) {
+    $scope.$watch('ctrl.routes', function(newVal) {
       if (!newVal) {
         return;
       }
 
-      _updateInfoBox();
+      self.duration = mapUtils.displayTime(newVal.routes[0].all_duration);
+      self.distance = mapUtils.displayDistance(newVal.routes[0].all_distance);
     });
 
     function $onInit() {
       _injectBox();
-    }
-
-    function _updateInfoBox() {
-      self.duration = DEFAULT_DURATION;
-      self.distance = DEFAULT_DISTANCE;
-
-      calendarGeoApi.getCurrentPosition()
-        .then(function(currentPositionAddress) {
-
-          calendarMapRestangular.one('routes')
-          .one(DEFAULT_TRANSPORT_TYPE)
-          .one(currentPositionAddress.coords.latitude.toString()).one(currentPositionAddress.coords.longitude.toString())
-          .one(self.eventCoord.lat).one(self.eventCoord.lon)
-          .get().then(function(result) {
-            self.duration = mapUtils.displayTime(result.data.routes[0].all_duration);
-            self.distance = mapUtils.displayDistance(result.data.routes[0].all_distance);
-            self.updateRoutes()(result.data);
-          });
-        });
     }
 
     function _injectBox() {
@@ -57,6 +36,13 @@
 
       infoBox.onAdd = function() {
         this.div = L.DomUtil.get('infoBox');
+
+        if (!L.Browser.touch) {
+          L.DomEvent.disableClickPropagation(this.div);
+          L.DomEvent.on(this.div, 'mousewheel', L.DomEvent.stopPropagation);
+        } else {
+          L.DomEvent.on(this.div, 'click', L.DomEvent.stopPropagation);
+        }
 
         return this.div;
       };

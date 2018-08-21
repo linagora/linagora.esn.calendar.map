@@ -2,27 +2,27 @@
   'use strict';
 
   angular.module('linagora.esn.calendar.map')
-    .controller('calTransportModeFormController', calTransportModeFormController);
+    .controller('calendarButtonController', calendarButtonController);
 
-  function calTransportModeFormController(
+  function calendarButtonController(
     $window
   ) {
-    var L = $window.L;
     var self = this;
+    var L = $window.L;
 
     self.$onInit = $onInit;
 
     function $onInit() {
-      _injectForm();
+      _injectBox();
     }
 
-    function _injectForm() {
-      var transportMode = L.control({
+    function _injectBox() {
+      var returnToCalendarButton = L.control({
         position: 'bottomleft'
       });
 
-      transportMode.onAdd = function() {
-        this.div = L.DomUtil.get('transportModeBox');
+      returnToCalendarButton.onAdd = function() {
+        this.div = L.DomUtil.get('returnToCalendarButton');
 
         if (!L.Browser.touch) {
           L.DomEvent.disableClickPropagation(this.div);
@@ -34,9 +34,7 @@
         return this.div;
       };
 
-      self.controls.custom.push(transportMode);
-
-      self.transportmode = 'car';
+      self.controls.custom.push(returnToCalendarButton);
     }
   }
 })();

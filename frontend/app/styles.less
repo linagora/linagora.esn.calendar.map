@@ -1,8 +1,10 @@
 @import 'components/calInfoBox/calInfoBox.less';
 @import 'components/calRouteInfo/calRouteInfo.less';
+@import 'components/calendarButton/calendarButton.less';
 @import 'components/calReturnButton/calReturnButton.less';
 @import 'components/calButtonToRoute/calButtonToRoute.less';
 @import 'components/calTransportMode/calTransportMode.less';
+@import 'components/config/calendar-map-form.less';
 @import 'map/calMapRoute/calMapRoute.less';
 
 .map {
@@ -12,9 +14,43 @@
 
 .leaflet-top.leaflet-right {
   height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.mapButtons {
+.leaflet-bottom.leaflet-left {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
+
+.firstInOrder {
+  order: 1;
+}
+
+.calMapRouteButton {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 28px;
+  height: 28px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 18px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  i {
+      color: #231d1d;
+  }
+}
+
+.calMapRouteButton:hover {
+  background-color: #f4f4f4;
+}
+
+// .mapButtons {
+//   display: flex;
+//   flex-direction: column;
+// }

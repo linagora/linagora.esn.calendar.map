@@ -19,7 +19,7 @@ module.exports = (dependencies, lib) => {
         return res.status(400).json({error: {code: 400, message: 'Bad Request', details: 'Destination coordinates is missing'}});
       }
 
-      lib.routes.getRoutes(req.params, (err, result) => {
+      lib.routes.getRoutes(req.params, req.user, (err, result) => {
         if (err) {
           return res.status(500).json({error: { code: 500, message: 'Getting routes error', details: err.message }});
         }

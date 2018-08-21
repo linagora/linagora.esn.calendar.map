@@ -1,49 +1,115 @@
-#routeInfoBox {    
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Do+Hyeon');
+
+#routeInfoBox {
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-top: 0;
-  margin-right: 0;
-  height: 100%;
-  width: 500px;
-  opacity: 0.8;
-  padding: 15px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0px;
+  opacity: 0.9;
+  padding-top: 8px;
 }
 
-#routeInfoBoxHeader {
-  padding-left: 30px;
+.routeInfoBoxHeader {
+  padding-bottom: 7px;
   font-size: 18px;
+  margin-left: 30px;
 
-  h4{
-    font-size: 40px;
+  a {
+    color: #253c50;
   }
 }
 
-#routeInfoBoxBody {
-  font-size: 15px;
-  font-weight: bold;
+.routeInfoBoxBody {
+  height: 90%;
+  overflow-y: auto;
+  margin-left: 4px;
 
+  table {
+    border-collapse: separate;
+    border-spacing: 12px;
+    color: #253c50;
+    font-size: 14px;
+    font-family: 'Do Hyeon', sans-serif;
+  }
   
-  tr {
-    margin: 15px 0;
-    display: flex;
-        
-    
-    &:hover {
-      background-color: #e4e4e49c;
-    }
+  tr:hover {
+    background-color: #e4e4e49c;
   }
 }
 
-// #showHideBox {
-//   position: fixed;
-//   right: 0;
-//   height: 50px;
-//   width: 17px;
-//   background-color: blue;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.titleHeader {
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  h4 {
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 36px;
+    color: #253c50;
+  }
+}
+
+.infoHeader {
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 32px;
+}
+
+.routeInfo {
+  margin-right: 50px;
+  
+  i {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+
+#showHidebutton {
+  background-color: #fff;
+  height: 51px;
+  width: 16px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  top: 10px;
+  margin: 0;
+  font-size: 27px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  .iconChevron{
+    margin-top: 10px;
+    margin-left: -5px;
+    color: #474747;
+  }
+}
+
+#showHidebutton:hover{
+  background-color: #f4f4f4;
+}
+
+.depIcon {
+  color: green;
+}
+
+.arrIcon {
+  color: red;
+}
+
+// ::-webkit-scrollbar {
+//   width: 7px;
 // }
 
-#btn {
-  position: absolute;
-  right: 0;
-}
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1; 
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #888; 
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555; 
+// }

@@ -10,6 +10,7 @@
     calendarGeoApi,
     DEFAULT_TILES,
     DEFAULT_CENTER,
+    DEFAULT_TRANSPORT_TYPE,
     $stateParams
   ) {
     var self = this;
@@ -17,7 +18,6 @@
     self.$onInit = $onInit;
     self.updateControls = updateControls;
     self.updateCenter = updateCenter;
-    self.updateRoutes = updateRoutes;
 
     self.tiles = DEFAULT_TILES;
     self.center = self.center || DEFAULT_CENTER;
@@ -27,7 +27,7 @@
       custom: []
     };
     self.eventLocation = self.eventLocation || $stateParams.location || null;
-    self.eventRoutes = {};
+    self.defaults = {scrollWheelZoom: false};
 
     $scope.$watch('ctrl.eventLocation', function(newVal) {
       if (!newVal) {
@@ -73,6 +73,25 @@
       }
     }
 
+    function getRoutes() {
+      calendarGeoApi.getCurrentPosition()
+        .then(function(currentPositionAddress) {
+          if (!currentPositionAddress) {
+            self.routes = null;
+
+            return;
+          }
+
+          var currentPositionLatitude = currentPositionAddress.coords.latitude.toString();
+          var currentPositionLongitude = currentPositionAddress.coords.longitude.toString();
+
+          calendarGeoApi.getRoutes(DEFAULT_TRANSPORT_TYPE, currentPositionLatitude, currentPositionLongitude, self.eventCoord.lat, self.eventCoord.lon)
+            .then(function(routes) {
+              self.routes = routes;
+            });
+        });
+    }
+
     function updateControls(control) {
       self.controls.custom.push(control);
     }
@@ -93,15 +112,13 @@
           zoom: 15
       };
 
+      getRoutes();
+
       self.originalCenter = angular.copy(self.center);
     }
 
     function updateCenter() {
       self.center = angular.copy(self.originalCenter);
-    }
-
-    function updateRoutes(eventRoutes) {
-      self.eventRoutes = eventRoutes;
     }
   }
 })();

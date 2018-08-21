@@ -5,5 +5,6 @@ module.exports = {
     USER: '-password -accounts'
   },
   DEFAULT_OFFSET: 0,
-  DEFAULT_LIMIT: 10
+  DEFAULT_LIMIT: 10,
+  DEFAULT_API_URL: 'http://localhost:8090'
 };

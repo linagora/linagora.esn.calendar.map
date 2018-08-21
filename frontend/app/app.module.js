@@ -5,6 +5,13 @@
 
   angular.module(MODULE_NAME, [
     'restangular',
-    'leaflet-directive'
-  ]);
+    'leaflet-directive',
+    'ngAnimate',
+    'esn.module-registry',
+    'esn.configuration'
+  ])
+  .run(function(esnModuleRegistry, CALENDAR_MAP_MODULE_METADATA) {
+    esnModuleRegistry.add(CALENDAR_MAP_MODULE_METADATA);
+  })
+;
 })();

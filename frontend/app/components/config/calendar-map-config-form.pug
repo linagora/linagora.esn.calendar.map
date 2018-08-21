@@ -1,0 +1,8 @@
+ng-form(name="urlForm")
+  .form-title
+    h5 #{__('Calendar Map API')}
+    small.text-muted #{__('Define the Calendar Map API endpoint.')}
+  .row.flex-vertical-centered
+    .col-xs-6
+      esn-form-group(label=__('Backend'), form="urlForm")
+        input.form-control(type="url", ng-model="$ctrl.configurations.api.value", name="webadminApiBackend", required)

@@ -4,6 +4,20 @@
   var MODULE_NAME = 'linagora.esn.calendar.map';
 
   angular.module(MODULE_NAME)
+    .constant('CALENDAR_MAP_MODULE_METADATA', {
+      id: 'linagora.esn.calendar.map',
+      title: 'Calendar Map',
+      icon: '/unifiedinbox/images/inbox-icon.svg',
+      homePage: '',
+      config: {
+        template: 'calendar-map-config-form',
+        displayIn: {
+          user: false,
+          domain: true,
+          platform: true
+        }
+      }
+    })
     .constant('DEFAULT_TILES', {
       url: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
       type: 'xyz',

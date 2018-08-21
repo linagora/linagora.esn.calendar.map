@@ -26,6 +26,13 @@
       btnToRoute.onAdd = function() {
         this.div = L.DomUtil.get('btnToRoute');
 
+        if (!L.Browser.touch) {
+          L.DomEvent.disableClickPropagation(this.div);
+          L.DomEvent.on(this.div, 'mousewheel', L.DomEvent.stopPropagation);
+        } else {
+          L.DomEvent.on(this.div, 'click', L.DomEvent.stopPropagation);
+        }
+
         return this.div;
       };
 

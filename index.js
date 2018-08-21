@@ -15,7 +15,8 @@ const awesomeModule = new AwesomeModule(AWESOME_MODULE_NAME, {
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.i18n', 'i18n'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.filestore', 'filestore'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.user', 'user'),
-    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.jobqueue', 'jobqueue')
+    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.jobqueue', 'jobqueue'),
+    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.esn-config', 'esn-config')
   ],
 
   states: {
@@ -57,6 +58,8 @@ const awesomeModule = new AwesomeModule(AWESOME_MODULE_NAME, {
       });
 
       webserverWrapper.addApp(AWESOME_MODULE_NAME, app);
+
+      require('./backend/lib/config')(dependencies).register();
 
       return callback();
     },

@@ -108,6 +108,7 @@
       function _updateRouteInfo(route) {
           var instructions = _getInstructions(route);
           var distances = _getDistances(route);
+          var icons = _getIcons(route);
 
           self.duration = mapUtils.displayTime(route.routes[0].all_duration);
           self.distance = mapUtils.displayDistance(route.routes[0].all_distance);
@@ -116,7 +117,8 @@
           for (var i = 0; i <= instructions.length; i++) {
             self.instructionsList.push({
               instruction: instructions[i],
-              distance: distances[i]
+              distance: distances[i],
+              icon: icons[i]
             });
           }
       }
@@ -149,7 +151,7 @@
         for (var i = 0; i < steps.length; i++) {
           // or add it in the end
           if (steps[i].distance === 0) {
-              distances.push(' B ');
+              distances.push('');
           } else if (steps[i].distance > 1000) {
               distances.push((steps[i].distance * 0.001).toFixed(2) + ' km');
           } else {
@@ -158,6 +160,17 @@
         }
 
         return distances;
+      }
+
+      function _getIcons(route) {
+        var steps = route.routes[0].steps;
+        var icons = [];
+
+        for (var i = 0; i < steps.length; i++) {
+            icons.push(steps[i].icon);
+        }
+
+        return icons;
       }
 
     }

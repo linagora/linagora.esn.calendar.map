@@ -3,13 +3,12 @@
 var MODULE_NAME = 'linagora.esn.calendar.map';
 
 angular.module(MODULE_NAME)
-  .component('calInfoBox', {
+  .component('calendarButton', {
     restrict: 'E',
-    templateUrl: '/linagora.esn.calendar.map/app/components/calInfoBox/calInfoBox.html',
-    controller: 'calinfoBoxController',
+    templateUrl: '/linagora.esn.calendar.map/app/components/calendarButton/calendarButton.html',
+    controller: 'calendarButtonController',
     controllerAs: 'ctrl',
     bindings: {
-      routes: '<',
       controls: '<'
     }
   });
