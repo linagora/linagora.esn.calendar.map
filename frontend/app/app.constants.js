@@ -6,8 +6,8 @@
   angular.module(MODULE_NAME)
     .constant('CALENDAR_MAP_MODULE_METADATA', {
       id: 'linagora.esn.calendar.map',
-      title: 'Calendar Map',
-      icon: '/unifiedinbox/images/inbox-icon.svg',
+      title: 'Map',
+      icon: '/linagora.esn.calendar.map/images/map-icon.svg',
       homePage: '',
       config: {
         template: 'calendar-map-config-form',

@@ -1,7 +1,5 @@
 {
-  "Action": "Hành động",
-  "Creation Date": "Ngày tạo",
-  "Name": "Tên",
-  "No Document": "Không có tài liệu",
-  "Size": "Kich thươc"
+  "Calendar Map API": "Calendar Map API",
+  "Map": "Map",
+  "Define the Calendar Map API endpoint.": "Define the Calendar Map API endpoint."
 }

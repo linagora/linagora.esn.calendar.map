@@ -1,7 +1,5 @@
 {
-  "Action": "Action",
-  "Creation Date": "Date de Création",
-  "Name": "Nom",
-  "No Document": "Pas de Document",
-  "Size": "Taille"
+  "Calendar Map API": "Calendar Map API",
+  "Map": "Carte",
+  "Define the Calendar Map API endpoint.": "Définnissez le chemin de base de l'API Map."
 }
