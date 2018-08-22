@@ -88,6 +88,8 @@
           calendarGeoApi.getRoutes(DEFAULT_TRANSPORT_TYPE, currentPositionLatitude, currentPositionLongitude, self.eventCoord.lat, self.eventCoord.lon)
             .then(function(routes) {
               self.routes = routes;
+            }).catch(function() {
+              self.routes = null;
             });
         });
     }
