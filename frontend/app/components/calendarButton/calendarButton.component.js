@@ -1,14 +1,17 @@
-'use strict';
+(function(angular) {
 
-var MODULE_NAME = 'linagora.esn.calendar.map';
+  'use strict';
 
-angular.module(MODULE_NAME)
-  .component('calendarButton', {
-    restrict: 'E',
-    templateUrl: '/linagora.esn.calendar.map/app/components/calendarButton/calendarButton.html',
-    controller: 'calendarButtonController',
-    controllerAs: 'ctrl',
-    bindings: {
-      controls: '<'
-    }
-  });
+  var MODULE_NAME = 'linagora.esn.calendar.map';
+
+  angular.module(MODULE_NAME)
+    .component('calendarButton', {
+      restrict: 'E',
+      templateUrl: '/linagora.esn.calendar.map/app/components/calendarButton/calendarButton.html',
+      controller: 'calendarButtonController',
+      controllerAs: 'ctrl',
+      bindings: {
+        controls: '<'
+      }
+    });
+})(angular);
