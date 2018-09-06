@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
   'use strict';
 
   var MODULE_NAME = 'linagora.esn.calendar.map';
@@ -26,4 +26,4 @@
       return t[0] + ' h ' + Math.round(t[1] * 0.6) + ' min';
   }
   }
-})();
+})(angular);

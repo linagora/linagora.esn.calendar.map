@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
     'use strict';
 
     var MODULE_NAME = 'linagora.esn.calendar.map';
@@ -11,4 +11,4 @@
         };
       });
 
-})();
+})(angular);

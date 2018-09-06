@@ -1,4 +1,4 @@
-(function() {
+(function(angular) {
   'use strict';
 
   angular.module('linagora.esn.calendar.map')
@@ -123,4 +123,4 @@
       self.center = angular.copy(self.originalCenter);
     }
   }
-})();
+})(angular);
