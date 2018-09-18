@@ -167,11 +167,59 @@
         var icons = [];
 
         for (var i = 0; i < steps.length; i++) {
-            icons.push(steps[i].icon);
+            var icon = _iconClass(steps[i].icon);
+
+            icons.push(icon);
         }
 
         return icons;
       }
 
+      function _iconClass(iconInitial) {
+        var iconClass;
+
+        switch (iconInitial) {
+          case 'Dep':
+            iconClass = 'mdi mdi-map-marker depIcon';
+            break;
+          case 'Arr':
+            iconClass = 'mdi mdi-map-marker arrIcon';
+            break;
+          case 'Rd':
+            iconClass = 'mdi mdi-reload mdi-flip-h';
+            break;
+          case 'C':
+          case 'S':
+            iconClass = 'mdi mdi-arrow-up';
+            break;
+          case 'R':
+          case 'SlR':
+          case 'ShR':
+            iconClass = 'mdi mdi-subdirectory-arrow-right mdi-flip-v';
+            break;
+          case 'L':
+          case 'SlL':
+          case 'ShL':
+            iconClass = 'mdi mdi-subdirectory-arrow-left mdi-flip-v';
+            break;
+          case 'Ut':
+            iconClass = 'mdi mdi-undo-variant mdi-rotate-270';
+            break;
+          case 'MR':
+            iconClass = 'mdi mdi-call-merge';
+            break;
+          case 'ML':
+            iconClass = 'mdi mdi-call-merge mdi-flip-h';
+            break;
+          case 'FL':
+            iconClass = 'mdi mdi-directions-fork';
+            break;
+          case 'FR':
+            iconClass = 'mdi mdi-directions-fork mdi-flip-h';
+            break;
+        }
+
+        return iconClass;
+      }
     }
   })(angular);

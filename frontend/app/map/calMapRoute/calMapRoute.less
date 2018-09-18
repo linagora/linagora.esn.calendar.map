@@ -1,15 +1,30 @@
 cal-map-route {
-    margin:0;
-    padding:0;
-    width:100vw;
-    height: ~"calc(100vh - @{header-height} - 3px)";
-    overflow: hidden;
   
-    @media (min-width: @screen-md-min) {
-      height: ~"calc(100vh - @{header-height-md} - 3px)";
-    }
-  
-    @media (min-width: @screen-xl-min) {
-      height: ~"calc(100vh - @{header-height-xl} - 3px)";
+  overflow: hidden;
+  width: 100%;
+  height: ~"calc(100vh - @{header-height})";
+  padding-top: @sub-header-height-md;
+
+
+  @media (max-width: @screen-md-min) {
+    height: ~"calc(100vh - @{header-height-md})";
+    padding-top: 0;
+  }
+
+  @media (min-width: @screen-xl-min) {
+    height: ~"calc(100vh - @{header-height-xl})";
+  }
+
+  display: flex;
+
+  .right-sidebar{
+    padding-left: 10px;
+    width: 35%;
+  }
+
+  .full-vw {
+    .routeInfoBox {
+      width: 100vw;
     }
   }
+}

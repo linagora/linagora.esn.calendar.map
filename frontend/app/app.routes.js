@@ -14,6 +14,14 @@
           eventRoutes: null
         },
         template: '<cal-map-route />'
+      })
+      .state('map.directions', {
+        url: '/directions',
+        views: {
+          'sidebar@map': {
+            templateUrl: '/linagora.esn.calendar.map/app/components/calRouteInfo/calRouteInfo.html'
+          }
+        }
       });
   }
 })(angular);

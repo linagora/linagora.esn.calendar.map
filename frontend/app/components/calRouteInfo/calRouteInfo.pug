@@ -1,21 +1,17 @@
-a#showHidebutton(class='shbutton', ng-click="ctrl.showHideInfoBox()")
-  .mdi.mdi-chevron-left(class='iconChevron', ng-if='ctrl.isVisible')
-  .mdi.mdi-chevron-right(class='iconChevron', ng-if='!ctrl.isVisible')
-#routeInfoBox(ng-hide = "ctrl.isVisible")
+.routeInfoBox(ng-hide = "ctrl.isVisible")
   .routeInfoBoxHeader
     .titleHeader
       h4 Directions
     .infoHeader
       .routeInfo
         i.mdi.mdi-timer-sand 
-        a {{ctrl.duration}}
+        span {{ctrl.duration}}
       .routeInfo
         i.mdi.mdi-road-variant 
-        a {{ctrl.distance}}
+        span {{ctrl.distance}}
   .routeInfoBoxBody
-    table
-      tr(ng-repeat="info in ctrl.instructionsList")
-        td(width="5%" ng-class="ctrl.iconClass(info.icon)")
-        td(width="75%") {{info.instruction}}
-        td(width="20%") {{info.distance}}
-        
+    ul.info-list(ng-repeat="info in ctrl.instructionsList")
+      li.icon-list(class="{{::info.icon}}")
+      li.instruction-list {{info.instruction}}
+      li.distance-list {{info.distance}}
+      
