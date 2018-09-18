@@ -50,12 +50,28 @@
 
         self.start = {
           lat: waypoints[0][0],
-          lng: waypoints[0][1]
+          lng: waypoints[0][1],
+          icon: {
+            iconUrl: 'linagora.esn.calendar.map/images/marker-icon-green.png',
+            shadowUrl: 'linagora.esn.calendar.map/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          }
         };
 
         self.destination = {
           lat: waypoints[1][0],
-          lng: waypoints[1][1]
+          lng: waypoints[1][1],
+          icon: {
+            iconUrl: 'linagora.esn.calendar.map/images/marker-icon-red.png',
+            shadowUrl: 'linagora.esn.calendar.map/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+          }
         };
 
         var firstPoint = {
