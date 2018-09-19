@@ -1,5 +1,11 @@
+sub-header
+  calendar-map-sub-header
+
 .map
   leaflet(ng-show='ctrl.supported', center='ctrl.center', tiles='ctrl.tiles', bounds='ctrl.bounds', controls='ctrl.controls', markers='ctrl.markers', geojson='ctrl.geojson', height='100%', width='100%')
     cal-transport-mode-form(controls='ctrl.controls', on-change-mode='ctrl.changeTransportMode')
     calendar-button(controls='ctrl.controls')
-    cal-route-info(controls='ctrl.controls', instructions-list= 'ctrl.instructionsList', distance= 'ctrl.distance', duration= 'ctrl.duration')
+
+cal-route-info.right-sidebar.hidden-xs(controls='ctrl.controls', instructions-list= 'ctrl.instructionsList', distance= 'ctrl.distance', duration= 'ctrl.duration')
+
+.hidden-md.hidden-xl.hidden-lg.full-vw(ui-view="sidebar")

@@ -1,93 +1,75 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Do+Hyeon');
 
-#routeInfoBox {
+.routeInfoBox {
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  margin: 0px;
-  opacity: 0.9;
   padding-top: 8px;
-}
-
-.routeInfoBoxHeader {
-  padding-bottom: 7px;
-  font-size: 18px;
-  margin-left: 30px;
-
-  a {
-    color: #253c50;
-  }
-}
-
-.routeInfoBoxBody {
-  height: 90%;
-  overflow-y: auto;
-  margin-left: 4px;
-
-  table {
-    border-collapse: separate;
-    border-spacing: 12px;
-    color: #253c50;
-    font-size: 14px;
-    font-family: 'Do Hyeon', sans-serif;
-  }
+  height: 100%;
   
-  tr:hover {
-    background-color: #e4e4e49c;
-  }
-}
-
-.titleHeader {
-  margin-bottom: 10px;
-  margin-left: 10px;
-
-  h4 {
-    font-family: 'Baloo Bhai', cursive;
-    font-size: 36px;
-    color: #253c50;
-  }
-}
-
-.infoHeader {
-  display: flex;
-  flex-direction: row;
-  font-size: 17px;
-  font-weight: bold;
-  margin-left: 32px;
-}
-
-.routeInfo {
-  margin-right: 50px;
+  .routeInfoBoxHeader {
+    padding-bottom: 7px;
+    font-size: 18px;
+    margin-left: 30px;
   
-  i {
-    margin-right: 10px;
-    font-size: 20px;
+    .titleHeader {
+      margin-left: 10px;
+      
+      h4 {
+        font-family: 'Baloo Bhai', cursive;
+        font-size: 36px;
+        color: #253c50;
+      }
+    }
+    
+    .infoHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      font-size: 17px;
+      font-weight: bold;
+      
+      .routeInfo {
+        
+        a { color: #253c50;}
+
+        i {
+          margin-right: 10px;
+          font-size: 20px;
+        }
+      }
+    }
   }
-}
 
-#showHidebutton {
-  background-color: #fff;
-  height: 51px;
-  width: 16px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  top: 10px;
-  margin: 0;
-  font-size: 27px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-
-  .iconChevron{
-    margin-top: 10px;
-    margin-left: -5px;
-    color: #474747;
+  .routeInfoBoxBody {
+    height: 90%;
+    overflow-y: auto;
+    margin-left: 4px;
+  
+    .info-list {
+      list-style-type: none;
+      display: flex;
+      padding-left: 10px;
+      color: #253c50;
+      font-size: 15px;
+      font-family: 'Do Hyeon', sans-serif;
+      padding-bottom: 5px;
+      margin-top: 10px;
+  
+      .icon-list {
+        width: 5%;
+      }
+      
+      .instruction-list {
+        width: 80%;
+        padding-left: 10px;
+      }
+      
+      .distance-list {
+        width: 15%;
+        padding-left: 5px;
+      }
+    }
   }
-}
-
-#showHidebutton:hover{
-  background-color: #f4f4f4;
 }
 
 .depIcon {
@@ -97,19 +79,3 @@
 .arrIcon {
   color: red;
 }
-
-// ::-webkit-scrollbar {
-//   width: 7px;
-// }
-
-// ::-webkit-scrollbar-track {
-//   background: #f1f1f1; 
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background: #888; 
-// }
-
-// ::-webkit-scrollbar-thumb:hover {
-//   background: #555; 
-// }

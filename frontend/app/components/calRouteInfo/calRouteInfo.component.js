@@ -7,7 +7,6 @@
     .component('calRouteInfo', {
       restrict: 'E',
       templateUrl: '/linagora.esn.calendar.map/app/components/calRouteInfo/calRouteInfo.html',
-      controller: 'calRouteInfoController',
       controllerAs: 'ctrl',
       bindings: {
         controls: '<',
