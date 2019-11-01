@@ -60,7 +60,7 @@
     "i18n": "0.8.3",
     "lodash": "4.17.15",
     "moment": "2.24.0",
-    "mongoose": "5.6.9",
+    "mongoose": "5.7.7",
     "node-geocoder": "3.22.0",
     "serve-favicon": "2.5.0"
   }
